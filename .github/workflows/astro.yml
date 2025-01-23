@@ -3,7 +3,7 @@ name: Deploy Astro site to Pages
 on:
   push:
     branches:
-    - master # Reemplaza "master" con tu rama principal si es diferente
+    - master # Cambia "master" por la rama principal de tu repositorio si es necesario
   workflow_dispatch:
 
 
@@ -25,13 +25,15 @@ jobs:
       with:
         node-version: 20
 
-    # Instala dependencias y construye el proyecto
-    - name: Install and Build
-      run: |
-        npm ci
-        npx astro build
+    # Instala dependencias
+    - name: Install dependencies
+      run: npm ci
 
-    # Despliega el sitio en GitHub Pages
+    # Construye el proyecto con Astro
+    - name: Build the project
+      run: npm run build
+
+    # Despliega el directorio "dist" en GitHub Pages
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v4
       with:
