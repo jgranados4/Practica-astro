@@ -14,6 +14,8 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  SCORE_API_ENDPOINT: ${{ secrets.SCORE_API_ENDPOINT }}
 jobs:
   build:
     runs-on: ubuntu-latest
