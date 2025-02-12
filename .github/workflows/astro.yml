@@ -15,7 +15,7 @@ permissions:
   id-token: write
 
 env:
-  SCORE_API_ENDPOINT: ${{ secrets.SCORE_API_ENDPOINT }}
+  SCORE_API_ENDPOINT: ${{secrets.PUBLIC_SCORE_API_ENDPOINT}}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
       - name: variable entorno
-        run: echo "este s variable ${{secrets.SCORE_API_ENDPOINT}}"
+        run: echo "este s variable ${{secrets.PUBLIC_SCORE_API_ENDPOINT}}"
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
