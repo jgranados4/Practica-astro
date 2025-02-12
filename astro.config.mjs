@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://jgranados4.github.io",
+  base: "Practica-astro",
   output: "server",
   integrations: [tailwind()],
   env: {
